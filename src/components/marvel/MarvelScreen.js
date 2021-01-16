@@ -1,5 +1,5 @@
 import React from "react";
-import HeroList from "../login/HeroList";
+import HeroList from "../heroes/HeroList";
 
 const MarvelScreen = () => {
   return (
