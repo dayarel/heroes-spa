@@ -11,7 +11,7 @@ const DashboardRoutes = () => {
       <div className="container mt-5">
         <Switch>
           <Route exact path="/marvel" component={MarvelScreen} />
-          <Route exact path="/heroe/:heroeid" component={HeroeScreen} />
+          <Route exact path="/hero/:heroeid" component={HeroeScreen} />
           <Route exact path="/dc" component={DCScreen} />
           <Redirect to="/marvel" />
         </Switch>
