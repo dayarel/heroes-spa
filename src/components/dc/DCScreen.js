@@ -3,9 +3,8 @@ import HeroList from "../heroes/HeroList";
 
 const DCScreen = () => {
   return (
-    <div>
-      <h1>DC Screen</h1>
-      <hr />
+    <div className="heropage-wrapper">
+      <h1 className="red-background">DC Heroes</h1>
       <HeroList publisher="DC Comics" />
     </div>
   );
