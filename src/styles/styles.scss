@@ -1,0 +1,220 @@
+// General colors
+$heading: #426696;
+$subheading: #658ec6;
+$red: #f01e1e;
+// Reset styles
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+p,
+a,
+li {
+  font-family: "Poppins", cursive;
+}
+
+.white-background {
+  background: linear-gradient(
+    to right-bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+.blue-background {
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+}
+
+.red-background {
+  background: linear-gradient(to right top, $red, darken($red, 20%));
+}
+
+h1 {
+  color: $heading;
+  font-weight: 600;
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+// Site styles
+body {
+  background-image: url("../images/bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+}
+.container {
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+
+  &.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 425px;
+    height: 155px;
+    padding: 15px;
+    width: 75%;
+    h1 {
+      color: black;
+    }
+    button {
+      appearance: none;
+
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      display: block;
+      font-family: "Poppins", cursive;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 15px auto 0;
+      padding: 15px 10px;
+      width: 85%;
+    }
+  }
+}

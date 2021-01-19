@@ -3,6 +3,7 @@ import { AuthContext } from "./auth/AuthContext";
 import AppRouter from "./routers/AppRouter";
 import { authReducer } from "./auth/authReducer";
 import "./styles/styles.scss";
+
 const init = () => {
   return (
     JSON.parse(localStorage.getItem("user")) || {

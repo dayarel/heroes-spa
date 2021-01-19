@@ -7,9 +7,9 @@ import DCScreen from "../components/dc/DCScreen";
 import SearchScreen from "../components/search/SearchScreen";
 const DashboardRoutes = () => {
   return (
-    <>
+    <main>
       <Navbar />
-      <div className="container mt-5">
+      <div>
         <Switch>
           <Route exact path="/marvel" component={MarvelScreen} />
           <Route exact path="/hero/:heroeid" component={HeroeScreen} />
@@ -18,7 +18,7 @@ const DashboardRoutes = () => {
           <Redirect to="/marvel" />
         </Switch>
       </div>
-    </>
+    </main>
   );
 };
 

@@ -16,12 +16,11 @@ const LoginScreen = ({ history }) => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container login-container">
       <h1>Login</h1>
-      <hr />
 
-      <button className="btn btn-primary" onClick={handleLogin}>
-        Login
+      <button className="red-background" onClick={handleLogin}>
+        Go!
       </button>
     </div>
   );
