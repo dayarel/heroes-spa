@@ -130,6 +130,9 @@ table {
 
 * {
   box-sizing: border-box;
+  outline: none;
+  scrollbar-width: thin;
+  scrollbar-color: $red;
 }
 h1,
 h2,
@@ -198,7 +201,14 @@ button {
   font-weight: 700;
 }
 
+// Scrollbar style
+
 // Site styles
+
+html,
+body {
+  overflow: hidden;
+}
 body {
   background-image: url("../images/bg.jpg");
   background-position: center;
@@ -257,7 +267,7 @@ body {
     flex: 1;
     flex-direction: column;
     justify-content: space-evenly;
-
+    min-width: 225px;
     .user-wrapper {
       color: white;
       display: flex;
@@ -332,74 +342,196 @@ body {
   }
   .hero-wrapper {
     flex: 3;
-    overflow: hidden;
+    padding: 35px 45px;
     .heropage-wrapper {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      padding: 35px 0;
-
       h1 {
         border-radius: 10px;
         color: white;
-        display: inline-block;
-        // margin-left: auto;
+        margin: 0 auto;
         padding: 10px 15px;
+        text-align: center;
+        width: 235px;
       }
       .card-columns {
-        overflow: scroll;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .card {
-          background: linear-gradient(
-            to right bottom,
-            rgba(255, 255, 255, 0.8),
-            rgba(255, 255, 255, 0.5)
-          );
-          border-radius: 10px;
-          box-shadow: 6px 6px 20px rgba(122, 122, 122, 0753);
-          display: flex;
-          height: 170px;
-          margin-top: 25px;
-          overflow: hidden;
-          width: 80%;
-          .card-img {
-            flex: 1;
-            img {
-              max-width: 100%;
-            }
+        margin-top: 35px;
+      }
+    }
+    .hero-info {
+      border-radius: 10px;
+      display: flex;
+      max-height: 100%;
+      overflow: hidden;
+      &-image {
+        flex: 3;
+        img {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+      &-body {
+        background: linear-gradient(
+          to right bottom,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0.5)
+        );
+        flex: 2;
+        padding: 25px;
+        h3 {
+          font-size: 25px;
+          color: $red;
+          position: relative;
+          text-align: center;
+          text-transform: uppercase;
+          &:after {
+            background-color: $red;
+            border-radius: 5px;
+            content: "";
+            display: block;
+            height: 4px;
+            margin-top: 5px;
+            width: 100%;
           }
-          .card-body {
-            flex: 2;
-            padding: 20px;
-            h5 {
-              color: $darkred;
-              font-size: 18px;
+        }
+
+        ul {
+          margin-top: 35px;
+          li {
+            color: $darkred;
+            opacity: 0.6;
+            &:not(:first-child) {
+              margin-top: 15px;
             }
-            p {
-              color: $red;
-              font-size: 16px;
-              font-style: italic;
-              opacity: 0.9;
-              & + p {
-                color: black;
-                font-size: 14px;
-                opacity: 0.8;
-              }
-            }
-            a {
-              border-radius: 10px;
-              color: white;
-              display: block;
-              padding: 10px 15px;
-              text-decoration: none;
-              width: 150px;
+            b {
+              color: black;
+              font-weight: 700;
             }
           }
         }
+
+        h5 {
+          font-size: 18px;
+          font-weight: 700;
+          opacity: 0.8;
+          text-decoration: underline;
+          & + p {
+            color: $darkred;
+            opacity: 0.6;
+          }
+        }
+
+        button {
+          font-size: 16px;
+          padding: 10px 15px;
+        }
+      }
+    }
+    .search-section {
+      h1 {
+        border-radius: 10px;
+        color: white;
+        margin: 0 auto;
+        padding: 10px 15px;
+        text-align: center;
+        width: 235px;
+      }
+      .search-wrapper {
+        align-items: flex-start;
+        display: flex;
+        margin-top: 35px;
+
+        .search-field {
+          flex: 1;
+          margin-right: 45px;
+          input {
+            background: linear-gradient(
+              to right bottom,
+              rgba(255, 255, 255, 0.8),
+              rgba(255, 255, 255, 0.5)
+            );
+            border: none;
+            border-radius: 5px;
+            color: red;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 15px 10px;
+            width: 100%;
+          }
+          button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            width: 100%;
+          }
+        }
+        .search-body {
+          flex: 2;
+          .alert {
+            border-radius: 10px;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            padding: 15px 25px;
+            &.alert-info {
+              background: linear-gradient(
+                to right bottom,
+                rgba(153, 255, 204, 0.8),
+                rgba(153, 255, 204, 0.5)
+              );
+            }
+            &.alert-danger {
+              background: linear-gradient(
+                to right bottom,
+                rgba(244, 87, 87, 0.8),
+                rgba(244, 87, 8704, 0.5)
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+  .card {
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.5)
+    );
+    border-radius: 10px;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0753);
+    display: flex;
+    height: 170px;
+    margin-top: 25px;
+    overflow: hidden;
+    width: 95%;
+    .card-img {
+      flex: 1;
+      img {
+        max-width: 100%;
+      }
+    }
+    .card-body {
+      flex: 2;
+      padding: 20px;
+      h5 {
+        color: $darkred;
+        font-size: 18px;
+      }
+      p {
+        color: $red;
+        font-size: 16px;
+        font-style: italic;
+        opacity: 0.9;
+        & + p {
+          color: black;
+          font-size: 14px;
+          opacity: 0.8;
+        }
+      }
+      a {
+        border-radius: 10px;
+        color: white;
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        width: 150px;
       }
     }
   }

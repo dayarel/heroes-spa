@@ -20,35 +20,25 @@ const SearchScreen = ({ history }) => {
     history.push(`?q=${searchText}`);
   };
   return (
-    <div>
-      <h1>Search Screen</h1>
-      <hr />
-
-      <div className="row">
-        <div className="col-5">
-          <h4>Search Form</h4>
-          <hr />
+    <div className="search-section">
+      <h1 className="red-background">Search A Hero</h1>
+      <div className="search-wrapper">
+        <div className="mt-5 search-field">
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Find your hero"
-              className="form-control"
               name="searchText"
               value={searchText}
               autoComplete="off"
               onChange={handleInputChange}
             />
-            <button
-              type="submit"
-              className="btn btn-block mt-2 btn-outline-primary"
-            >
+            <button type="submit" className="red-background">
               Search
             </button>
           </form>
         </div>
-        <div className="col-7">
-          <h4>Results</h4>
-          <hr />
+        <div className="search-body">
           {q === "" && <div className="alert alert-info">Search a hero...</div>}
 
           {q !== "" && filteredHeroes.length === 0 && (
