@@ -21,21 +21,32 @@ export const Navbar = () => {
   return (
     <nav className="red-background">
       <div className="user-wrapper">
-        <img src={avatar} alt="User Avatar" />
-        <h1 className="mt-2">{user.name}</h1>
-        <h2 className="mt-1">Free member</h2>
+        <img
+          src={avatar}
+          alt="User Avatar"
+          className="animate__animated animate__zoomIn animate__fast"
+        />
+        <h1 className="mt-2 animate__animated animate__fadeIn">{user.name}</h1>
+        <h2 className="mt-1 animate__animated animate__fadeIn animate__delay-1s">
+          Free member
+        </h2>
 
-        <button className="mt-5" onClick={handleLogout}>
+        <button
+          className="mt-5 animate__animated animate__fadeIn animate__delay-2s"
+          onClick={handleLogout}
+        >
           Logout
         </button>
       </div>
       <div className="nav-links">
-        <h1>Publishers</h1>
+        <h1 className="animate__animated animate__fadeInLeft animate__delay-2s">
+          Publishers
+        </h1>
         <ul className="mt-5">
-          <li>
+          <li className="animate__animated animate__fadeInLeft animate__delay-2s">
             <img src={marvel} alt="Shield logo" />
             <NavLink
-              activeClassName="active"
+              activeClassName="active "
               className="nav-item nav-link"
               exact
               to="/marvel"
@@ -43,7 +54,7 @@ export const Navbar = () => {
               Marvel
             </NavLink>
           </li>
-          <li className="mt-3">
+          <li className="mt-3 animate__animated animate__fadeInLeft animate__delay-2s">
             <img src={dc} alt="DC Logo" />
             <NavLink
               activeClassName="active"
@@ -54,7 +65,7 @@ export const Navbar = () => {
               DC
             </NavLink>
           </li>
-          <li className="mt-3">
+          <li className="mt-3 animate__animated animate__fadeInLeft animate__delay-2s">
             <img src={glass} alt="Magnifying glass" />
             <NavLink
               activeClassName="active"
@@ -67,7 +78,7 @@ export const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="premium-badge">
+      <div className="premium-badge animate__animated animate__fadeIn animate__delay-3s">
         <h2>Go premium for more heroes!</h2>
         <img src={comicbook} alt="Premium logo" />
       </div>
